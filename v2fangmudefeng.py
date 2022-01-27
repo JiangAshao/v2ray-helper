@@ -42,14 +42,14 @@ def main():
         r0 = requests.post(url, headers=headers, timeout=15)
     except requests.exceptions.RequestException as e:
         print(e)
-        send_wechat("r0失败" + e)
+        print("请求异常" + e)
         return
     if r0.status_code == 200:
         t = json.loads(r0.text)
         print(f"返回:{t['success']}")
     else:
         print(r0.text)
-        send_wechat("登录失败")
+        print("获取失败")
 
 
 if __name__ == "__main__":
