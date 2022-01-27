@@ -1,4 +1,4 @@
-name: "v2ray-helper"
+name: "v2ray-放牧的风"
 
 on:
   workflow_dispatch:
