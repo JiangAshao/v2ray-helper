@@ -1,17 +1,15 @@
-import os
-import sys
-import hmac
+import requests
 import json
 import time
-import base64
-import urllib
 import random
-import hashlib
-import requests
 from bs4 import BeautifulSoup
+import sys
+import hmac
+import urllib
 sys.setrecursionlimit(3000)
+import os
 # 加入随机延时
-time.sleep(random.randint(1,30))
+# time.sleep(random.randint(1,30))
 
 # 钉钉机器人
 if os.environ['DD_BOT_TOKEN'] != "":
@@ -20,7 +18,7 @@ if os.environ['DD_BOT_SECRET'] != "":
   DD_BOT_SECRET = os.environ['DD_BOT_SECRET']
 
 # 钉钉推送
-def dingNotify(self, text):
+def dingNotify(text):
     if DD_BOT_TOKEN != '':
         url = 'https://oapi.dingtalk.com/robot/send?access_token=' + DD_BOT_TOKEN
         data = {
@@ -91,7 +89,7 @@ def main():
         v2ray = soup.find_all("td", class_="v2ray", limit=10)
         for v2 in v2ray:
           data_raw = v2.find('a')["data-raw"]
-          dingNotify(data_raw.replace('\\',''),"\n")
+          dingNotify(data_raw.replace('\\',''))
     else:
         print(r0.text)
         print("获取失败")
