@@ -3,6 +3,7 @@ import sys
 import hmac
 import json
 import time
+import base64
 import urllib
 import random
 import hashlib
