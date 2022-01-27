@@ -28,3 +28,8 @@ jobs:
         env:
             DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
             DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.0.0
+        with: 
+          branch: v2ray
+          folder: dist
