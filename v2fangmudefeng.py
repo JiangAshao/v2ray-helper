@@ -1,13 +1,15 @@
-import requests
+import os
+import sys
+import hmac
 import json
 import time
+import urllib
 import random
+import request
 from bs4 import BeautifulSoup
-import sys
 sys.setrecursionlimit(3000)
-import os
 # 加入随机延时
-# time.sleep(random.randint(1,30))
+time.sleep(random.randint(1,30))
 
 # 钉钉机器人
 if os.environ['DD_BOT_TOKEN'] != "":
