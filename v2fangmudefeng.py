@@ -5,7 +5,7 @@ import json
 import time
 import urllib
 import random
-import request
+import requests
 from bs4 import BeautifulSoup
 sys.setrecursionlimit(3000)
 # 加入随机延时
