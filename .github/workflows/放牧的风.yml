@@ -32,4 +32,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with: 
           branch: v2ray
-          folder: dist
+          folder: v2ray
