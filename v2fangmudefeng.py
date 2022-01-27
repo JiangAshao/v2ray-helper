@@ -16,13 +16,13 @@ if os.environ['DD_BOT_SECRET'] != "":
   DD_BOT_SECRET = os.environ['DD_BOT_SECRET']
 
 # 钉钉推送
-def dingNotify(self, text, desp):
+def dingNotify(self, text):
     if DD_BOT_TOKEN != '':
         url = 'https://oapi.dingtalk.com/robot/send?access_token=' + DD_BOT_TOKEN
         data = {
             "msgtype": "text",
             "text": {
-                'content': text + desp
+                'content': text
             }
         }
         headers = {
