@@ -25,3 +25,6 @@ jobs:
         run: |
           pip install -r requirements.txt
           echo "${{ secrets.PW }}" | tr '#' "\n" | xargs -I {} sh -c 'echo "{}" | python3 ./v2fangmudefeng.py'
+          env:
+              DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
+              DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
